@@ -1,0 +1,54 @@
+{
+    "name": "rag-zendesk-cli",
+    "version": "1.0.0",
+    "description": "TypeScript CLI application for RAG with Zendesk articles",
+    "type": "module",
+    "main": "dist/index.js",
+    "bin": {
+        "rag-zendesk": "dist/index.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "check-env": "node scripts/check-env.js",
+        "clean": "rm -rf dist",
+        "dev": "node --experimental-strip-types src/index.ts",
+        "lint": "eslint src/**/*.ts",
+        "setup": "npm install && npm run type-check && npm run check-env",
+        "start": "node --experimental-strip-types src/index.ts",
+        "start:compiled": "node dist/index.js",
+        "type-check": "tsc --noEmit"
+    },
+    "keywords": [
+        "rag",
+        "zendesk",
+        "cli",
+        "typescript",
+        "openai",
+        "embeddings",
+        "vector-search"
+    ],
+    "author": "Luca Becker <hello@luca-becker.me> (https://luca-becker.me)",
+    "license": "GPL-3.0-or-later",
+    "dependencies": {
+        "chalk": "5.4.1",
+        "cheerio": "^1.0.0-rc.12",
+        "dotenv": "17.2.1",
+        "inquirer": "12.9.0",
+        "openai": "5.11.0",
+        "ora": "8.2.0",
+        "zod": "3.25.76"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.0.0",
+        "@types/inquirer": "^9.0.7",
+        "@types/node": "20.19.9",
+        "eslint": "^9.0.0",
+        "jiti": "^2.0.0",
+        "prettier": "3.6.2",
+        "typescript": "^5.3.2",
+        "typescript-eslint": "^8.0.0"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    }
+}
